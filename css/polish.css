@@ -97,6 +97,9 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 .featured-card { grid-template-columns: 1.05fr 1fr; }
 .featured-image, .article-cover, .post-image {
+  display: block;
+  width: 100%;
+  object-fit: contain;
   background-color: #dcebdd;
   background-image: linear-gradient(90deg, rgb(23 99 76 / 8%) 1px, transparent 1px), linear-gradient(rgb(23 99 76 / 8%) 1px, transparent 1px);
   background-size: 28px 28px;
@@ -105,7 +108,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   font-weight: 400;
 }
 
-.featured-image { min-height: 330px; font-size: 5rem; }
+.featured-image { height: 330px; min-height: 330px; background-color: #fff; }
 .featured-content { align-self: center; padding: 44px; }
 .featured-content h3 { font-family: var(--serif); font-size: 2.25rem; font-weight: 400; }
 .featured-content p, .post-body p { color: var(--muted); }
@@ -123,7 +126,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .post-grid { gap: 18px; }
 .post-card { transition: transform 180ms ease, box-shadow 180ms ease; }
 .post-card:hover { box-shadow: 0 14px 32px rgb(23 39 34 / 9%); transform: translateY(-3px); }
-.post-image { height: 175px; font-size: 2.4rem; }
+.post-image { height: 175px; background-color: #fff; }
 .post-body { padding: 23px; }
 .post-body h3 { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; }
 
@@ -149,7 +152,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 .note-box { background: #e8eee2; border-left-color: var(--green); border-radius: 3px; }
 .article { padding: 65px 0; }
-.article-cover { border-radius: 4px; }
+.article-cover { height: 330px; border-radius: 4px; background-color: #fff; }
 .article h1 { margin-top: 12px; }
 .article h2 { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; }
 .article p { color: #43514a; }
@@ -173,7 +176,7 @@ footer { border-top-color: var(--line); margin-top: 24px; }
   .hero h1 { font-size: 3.25rem; }
   .page h1, .article h1 { font-size: 2.8rem; }
   .featured-card { grid-template-columns: 1fr; }
-  .featured-image { min-height: 220px; }
+  .featured-image { height: 220px; min-height: 220px; }
   .featured-content { padding: 28px; }
   .featured-content h3 { font-size: 1.9rem; }
   .post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

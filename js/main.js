@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const card = post => `
     <article class="post-card">
-      <div class="post-image">${post.image}</div>
+      <img class="post-image" src="${post.image}" alt="${post.imageAlt}" width="768" height="768" loading="lazy" decoding="async">
       <div class="post-body">
         <span class="tag">${post.category}</span>
         <h3>${post.title}</h3>

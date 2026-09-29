@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 768">
+  <rect width="768" height="768" fill="#fff"/>
+  <path d="M384 108 548 202v188l-164 94-164-94V202z" fill="#e8f5fb" stroke="#174b70" stroke-width="18" stroke-linejoin="round"/>
+  <path d="M468 230a112 112 0 1 0 0 132l-37-35a62 62 0 1 1 0-62z" fill="#176da7" stroke="#123f61" stroke-width="13"/>
+  <path d="M493 291h100v34H493zm32-32h35v99h-35z" fill="#00a6c7"/>
+  <text x="384" y="598" text-anchor="middle" fill="#174b70" font-family="Arial, sans-serif" font-size="108" font-weight="700">C++</text>
+  <text x="384" y="650" text-anchor="middle" fill="#587482" font-family="Arial, sans-serif" font-size="32" font-weight="600">Modern C++ Programming</text>
+</svg>
