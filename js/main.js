@@ -1,7 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.querySelector(".menu-btn");
   const nav = document.querySelector(".nav nav");
-  if (menuBtn) menuBtn.addEventListener("click", () => nav.classList.toggle("show"));
+  if (menuBtn && nav) {
+    menuBtn.addEventListener("click", () => {
+      const expanded = menuBtn.getAttribute("aria-expanded") === "true";
+      menuBtn.setAttribute("aria-expanded", String(!expanded));
+      menuBtn.setAttribute("aria-label", expanded ? "Open navigation" : "Close navigation");
+      nav.classList.toggle("show", !expanded);
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.setAttribute("aria-label", "Open navigation");
+        nav.classList.remove("show");
+        menuBtn.focus();
+      }
+    });
+  }
 
   const card = post => `
     <article class="post-card">
@@ -25,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (all) {
     const categories = ["All", ...new Set(posts.map(p => p.category))];
-    filters.innerHTML = categories.map(c => `<button class="filter ${c === selected ? "selected" : ""}" data-category="${c}">${c}</button>`).join("");
+    filters.innerHTML = categories.map(c => `<button class="filter ${c === selected ? "selected" : ""}" data-category="${c}" aria-pressed="${c === selected}">${c}</button>`).join("");
 
     const params = new URLSearchParams(location.search);
     const topic = params.get("topic");
@@ -43,8 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
     filters.addEventListener("click", e => {
       if (!e.target.matches(".filter")) return;
       selected = e.target.dataset.category;
-      document.querySelectorAll(".filter").forEach(b => b.classList.remove("selected"));
+      document.querySelectorAll(".filter").forEach(button => {
+        button.classList.remove("selected");
+        button.setAttribute("aria-pressed", "false");
+      });
       e.target.classList.add("selected");
+      e.target.setAttribute("aria-pressed", "true");
       render();
     });
 

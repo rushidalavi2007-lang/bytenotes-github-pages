@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog — ByteNotes</title>
+  <meta name="description" content="Browse programming, web development and GitHub notes from ByteNotes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/polish.css">
 </head>
 <body>
 <header class="header"><div class="container nav">
   <a class="logo" href="index.html">Byte<span>Notes</span></a>
-  <button class="menu-btn" aria-label="Toggle menu">☰</button>
-  <nav><a href="index.html">Home</a><a class="active" href="blog.html">Blog</a><a href="index.html#topics">Topics</a><a href="about.html">About</a></nav>
+  <button class="menu-btn" aria-label="Open navigation" aria-expanded="false" aria-controls="site-navigation">☰</button>
+  <nav id="site-navigation"><a href="index.html">Home</a><a class="active" href="blog.html">Blog</a><a href="index.html#topics">Topics</a><a href="about.html">About</a></nav>
 </div></header>
 
 <main class="container page">
@@ -19,10 +24,10 @@
   <p class="lead">Notes, lessons and small discoveries from my learning journey.</p>
 
   <div class="blog-tools">
-    <input id="search" type="search" placeholder="Search articles...">
+    <input id="search" type="search" aria-label="Search articles" placeholder="Search articles...">
     <div id="filters" class="filters"></div>
   </div>
-  <div id="all-posts" class="post-grid"></div>
+  <div id="all-posts" class="post-grid" aria-live="polite"></div>
 </main>
 
 <footer><div class="container footer"><strong>ByteNotes</strong><span>© 2026 · Learn. Build. Share.</span></div></footer>
